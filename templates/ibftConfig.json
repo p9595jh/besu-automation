@@ -1,0 +1,42 @@
+{
+	"genesis": {
+		"config": {
+			"chainId": 2018,
+			"constantinoplefixblock": 0,
+			"ibft2": {
+				"blockperiodseconds": 2,
+				"epochlength": 30000,
+				"requesttimeoutseconds": 10
+			}
+		},
+		"nonce": "0x0",
+		"timestamp": "0x58ee40ba",
+		"gasLimit": "0x280DE800",
+		"difficulty": "0x1",
+		"mixHash": "0x63746963616c2062797a616e74696e65206661756c7420746f6c6572616e6365",
+		"coinbase": "0x0000000000000000000000000000000000000000",
+		"alloc": {
+			"739eedba88df8895a280a3970e602857ceb0f397": {
+				"balance": "90000000000000000000000"
+			},
+			"25c97344655b089ab4b9349a9fb1bc225917eb2d": {
+				"balance": "90000000000000000000000"
+			},
+			"c0f86b51664d57668811dfa27f1bb710b61819eb": {
+				"balance": "90000000000000000000000"
+			},
+			"d0e4c0c9e7f499285e53550cb49fbaf13c28eb56": {
+				"balance": "90000000000000000000000"
+			},
+			"a2028e605d30f46ad676dff499b7da782a606253": {
+				"balance": "90000000000000000000000"
+			}
+		}
+	},
+	"blockchain": {
+		"nodes": {
+			"generate": true,
+			"count": 4
+		}
+	}
+}

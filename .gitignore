@@ -1,0 +1,34 @@
+# Emacs backup files
+*~
+*#
+.#*
+# Vim file artifacts
+.*.sw*
+# installed platform-specific binaries
+/bin
+.DS_Store
+.project
+# omit Go vendor directories
+vendor/
+.vscode
+.gradle
+.idea
+# Dependency directories
+node_modules/
+# Ignore Gradle build output directory
+build
+
+*.tar.gz
+log.txt
+
+dist
+package-lock.json
+
+configs/*
+!configs/config.yml
+
+src/__pycache__
+src/test.py
+
+work/*
+templates/lib/*

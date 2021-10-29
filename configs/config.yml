@@ -1,0 +1,46 @@
+# os should be windows | linux | mac
+
+accounts:
+
+  - ip: 127.0.0.1
+    username: 'medium'
+    password: '123123'
+    directory: /Users/medium/Desktop/PJH/blockchain/test/automation/node1
+    os: mac
+
+  - ip: 127.0.0.1
+    username: 'medium'
+    password: '123123'
+    directory: /Users/medium/Desktop/PJH/blockchain/test/automation/node2
+    os: mac
+
+  - ip: 127.0.0.1
+    username: 'medium'
+    password: '123123'
+    directory: /Users/medium/Desktop/PJH/blockchain/test/automation/node3
+    os: mac
+
+  - ip: 127.0.0.1
+    username: 'medium'
+    password: '123123'
+    directory: /Users/medium/Desktop/PJH/blockchain/test/automation/node4
+    os: mac
+
+options_boot:
+  - --data-path={DIR}/data
+  - --genesis-file={DIR}/genesis.json
+  - --rpc-http-enabled
+  - --rpc-http-api=ETH,NET,IBFT
+  - --host-allowlist="*"
+  - --rpc-http-cors-origins="all"
+
+options_else:
+  - --data-path={DIR}/data
+  - --genesis-file={DIR}/genesis.json
+  - --bootnodes={ENODE}
+  - --p2p-port={P2P_PORT}
+  - --rpc-http-enabled
+  - --rpc-http-api=ETH,NET,IBFT
+  - --host-allowlist="*"
+  - --rpc-http-cors-origins="all"
+  - --rpc-http-port={RPC_HTTP_PORT}
