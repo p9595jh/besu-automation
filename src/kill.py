@@ -21,7 +21,6 @@ def main():
     else:
         conf = sys.argv[1]
 
-    PID_index = 8
     accounts: list[Account] = []
     with open('../configs/' + conf, 'r', encoding='utf8') as f:
         content = (json.load(f) if conf[-4:].lower() == 'json' else yaml.load(f, Loader=yaml.FullLoader))
@@ -39,13 +38,24 @@ def main():
         if len(res) == 0:
             print('no item to kill in `%s:%d`' % (account.ip, account.p2p_port))
             continue
-        for s in res[0].strip().split(' '):
+        idx = -1
+        for i, line in enumerate(res):
+            if str(account.p2p_port) in line:
+                idx = i
+                break
+        for s in res[idx].strip().split(' '):
             s = s.strip()
             if s != '':
                 items.append(s)
-        manager.send_command('kill -9 ' + items[PID_index])
+        try:
+            item_to_kill = items[8]
+        except IndexError:
+            item_to_kill = items[6]
+        if '/' in item_to_kill:
+            item_to_kill = item_to_kill[:item_to_kill.find('/')]
+        manager.send_command('kill -9 ' + item_to_kill)
         manager.close_ssh_client()
-        print('`%s:%d` killed' % (account.ip, account.p2p_port))
+        print('`%s:%d` killed (PID: %s)' % (account.ip, account.p2p_port, item_to_kill))
 
 if __name__ == '__main__':
     main()
